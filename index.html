@@ -4,9 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>RideReplay — Film Your Ride. Replay the Day.</title>
-  <meta name="description" content="Rent an Insta360 action camera. Half-day $40, Full-day $60. Film your ride, replay the day." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
   <style>
@@ -18,50 +16,76 @@
       --muted:#C9D6E2;
     }
 
-    *{box-sizing:border-box}
+    *{box-sizing:border-box;}
 
-    html,body{
+    body{
       margin:0;
+      font-family:Inter, sans-serif;
       color:var(--white);
-      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif;
       background:#0F1B2D;
     }
 
-    /* --- BACKGROUND IMAGE + OVERLAY --- */
-    body::before {
+    /* Background image + overlay */
+    body::before{
       content:"";
       position:fixed;
       inset:0;
       background:url("ride-replay-bg.jpg") center/cover no-repeat;
       z-index:-2;
     }
-
-    body::after {
+    body::after{
       content:"";
       position:fixed;
       inset:0;
-      background:linear-gradient(to bottom, rgba(10,20,30,.55), rgba(10,20,30,.85));
+      background:rgba(0,0,0,0.55);
       z-index:-1;
     }
 
-    a{color:var(--frost);text-decoration:none}
-    a:hover{opacity:.9}
-
-    .container{max-width:1100px;margin:0 auto;padding:24px}
+    .container{
+      max-width:1100px;
+      margin:0 auto;
+      padding:24px;
+    }
 
     header{
       position:sticky;
       top:0;
-      backdrop-filter:saturate(180%) blur(6px);
-      background:rgba(15,27,45,.55);
-      border-bottom:1px solid rgba(255,255,255,.08);
-      z-index:10;
+      z-index:20;
+      background:rgba(10,20,30,0.55);
+      backdrop-filter:blur(6px);
+      border-bottom:1px solid rgba(255,255,255,0.1);
+      padding:14px 0;
     }
 
-    .nav{display:flex;align-items:center;justify-content:space-between}
-    .brand{display:flex;gap:12px;align-items:center}
-    .logo{width:40px;height:40px;}
-    .brand h1{font-size:20px;margin:0;font-weight:800;letter-spacing:.5px}
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .brand h1{
+      font-size:20px;
+      margin:0;
+      font-weight:800;
+      letter-spacing:.5px;
+    }
+
+    .pill{
+      background:rgba(249,115,22,.15);
+      border:1px solid rgba(245,107,53,.7);
+      padding:6px 10px;
+      border-radius:100px;
+      color:var(--orange);
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.3px;
+    }
 
     .btn{
       display:inline-block;
@@ -70,192 +94,154 @@
       background:var(--orange);
       color:#111;
       font-weight:800;
-      letter-spacing:.3px
+      letter-spacing:.3px;
+      text-decoration:none;
     }
+
     .btn.alt{
       background:transparent;
       border:2px solid var(--frost);
-      color:var(--frost)
+      color:var(--frost);
     }
 
+    /* HERO */
     .hero{
-      padding:80px 0 40px;
+      padding:80px 0 50px;
       text-align:center;
     }
 
     .hero svg{
-      width:120px;height:120px;margin-bottom:24px;fill:var(--orange);
+      width:130px;
+      height:130px;
+      fill:var(--orange);
+      margin-bottom:24px;
     }
 
     .hero h2{
       font-size:56px;
+      margin:0 0 12px;
       line-height:1.05;
-      margin:16px 0
+      font-weight:800;
     }
 
     .sub{
-      color:var(--muted);
       font-size:18px;
-      max-width:780px;
-      margin:auto
+      color:var(--muted);
+      max-width:760px;
+      margin:0 auto;
     }
 
     .cta{
+      margin-top:20px;
       display:flex;
       justify-content:center;
       gap:12px;
       flex-wrap:wrap;
-      margin-top:18px
-    }
-
-    .grid{display:grid;gap:18px}
-    @media(min-width:800px){
-      .grid.cols-2{grid-template-columns:repeat(2,1fr)}
     }
 
     .card{
-      border:1px solid rgba(255,255,255,.18);
-      background:rgba(0,0,0,.25);
-      backdrop-filter:blur(6px);
+      background:rgba(0,0,0,0.25);
+      border:1px solid rgba(255,255,255,0.18);
+      backdrop-filter:blur(4px);
       border-radius:18px;
-      padding:18px
+      padding:20px;
+      margin-top:30px;
     }
 
-    .price h3{margin:0 0 8px 0}
-    .price .amount{font-size:40px;font-weight:800}
-
-    .how ul{
-      margin:0;
-      padding-left:18px;
-      color:var(--muted);
-      line-height:1.7
+    .price .amount{
+      font-size:42px;
+      font-weight:800;
     }
-
-    .section{padding:36px 0}
-    .muted{color:var(--muted)}
 
     footer{
-      border-top:1px solid rgba(255,255,255,.1);
-      padding:28px 0;
-      margin-top:32px;
-      text-align:center
-    }
-
-    .pill{
-      display:inline-block;
-      background:rgba(249,115,22,.15);
-      border:1px solid rgba(245,107,53,.7);
-      color:var(--orange);
-      padding:6px 10px;
-      border-radius:999px;
-      font-weight:700;
-      font-size:12px;
-      letter-spacing:.3px
+      text-align:center;
+      padding:30px 0;
+      margin-top:40px;
+      color:var(--muted);
     }
   </style>
 </head>
 
 <body>
 
-  <header>
-    <div class="container nav">
-      <div class="brand">
-        <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <rect x="6" y="16" width="52" height="36" rx="8" fill="var(--orange)"/>
-          <rect x="18" y="10" width="12" height="8" rx="2" fill="var(--orange)"/>
-          <circle cx="32" cy="34" r="12" fill="#111"/>
-          <circle cx="32" cy="34" r="6" fill="#222"/>
-          <circle cx="50" cy="26" r="3" fill="#111"/>
-        </svg>
-        <h1>RIDE REPLAY</h1>
-        <span class="pill">Snowmass • Aspen</span>
-      </div>
-
-      <div class="cta">
-        <a class="btn" href="#book">Book Now</a>
-        <a class="btn alt" href="mailto:RideReplay1@gmail.com">Email</a>
-      </div>
+<header>
+  <div class="container nav">
+    <div class="brand">
+      <h1>RIDE REPLAY</h1>
+      <span class="pill">Snowmass • Aspen</span>
     </div>
-  </header>
 
-  <main class="container">
-
-    <section class="hero">
-      <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <rect x="6" y="16" width="52" height="36" rx="8" />
-        <rect x="18" y="10" width="12" height="8" rx="2" />
-        <circle cx="32" cy="34" r="12" fill="#111"/>
-        <circle cx="32" cy="34" r="6" fill="#222"/>
-        <circle cx="50" cy="26" r="3" fill="#111"/>
-      </svg>
-
-      <h2>Film Your Ride.<br/>Replay the Day.</h2>
-
-      <p class="sub">
-        Rent a premium 360° action camera for your mountain adventure.
-        Half-day <strong>$40</strong> · Full-day <strong>$60</strong>.
-        After booking, we’ll contact you to arrange a convenient pickup location.
-      </p>
-
-      <div class="cta">
-        <a class="btn" href="#book">Reserve a Camera</a>
-        <a class="btn alt" href="#how">How it works</a>
-      </div>
-    </section>
-
-    <section class="section grid cols-2">
-      <div class="card price">
-        <h3>Half-Day</h3>
-        <div class="amount">$40</div>
-        <p class="muted">3 hours · Great for a few laps or trying 360° filming for the first time.</p>
-      </div>
-
-      <div class="card price">
-        <h3>Full-Day</h3>
-        <div class="amount">$60</div>
-        <p class="muted">7 hours · Capture your entire day on the mountain in crisp 360°.</p>
-      </div>
-    </section>
-
-    <section id="how" class="section how card">
-      <h3>How it works</h3>
-
-      <ul>
-        <li><strong>Reserve</strong> online and choose Half-day or Full-day.</li>
-        <li><strong>Pickup</strong> — after your reservation, we’ll contact you to arrange a convenient meetup location.</li>
-        <li><strong>Ride</strong> — film your runs, jumps, and tree laps.</li>
-        <li><strong>Replay</strong> — we’ll send your raw footage after return, with optional professional editing available.</li>
-      </ul>
-
-      <p class="muted" style="margin-top:8px">
-        Card on file and valid ID required at pickup. Please review the rental waiver at checkout.
-      </p>
-    </section>
-
-    <section id="book" class="section card">
-      <h3>Book now</h3>
-      <p class="muted">Choose your preferred contact method below. We’ll confirm availability and coordinate pickup details.</p>
-
-      <div class="cta" style="margin-top:6px">
-        <a class="btn"
-           href="mailto:RideReplay1@gmail.com?subject=RideReplay%20Reservation&body=Name:%0APhone:%0ADate:%0AHalf/Full:%0A">
-           Email us
-        </a>
-
-        <a class="btn alt" href="tel:+17202363814">Call/Text 720-236-3814</a>
-      </div>
-    </section>
-
-  </main>
-
-  <footer>
-    <div class="container">
-      <small class="muted">© <span id="y"></span> RideReplay • Aspen / Snowmass</small><br/>
-      <small class="muted">📧 RideReplay1@gmail.com | 📞 720-236-3814</small>
+    <div class="cta">
+      <a class="btn" href="#book">Book Now</a>
+      <a class="btn alt" href="mailto:RideReplay1@gmail.com">Email</a>
     </div>
-  </footer>
+  </div>
+</header>
 
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+
+<main class="container">
+
+  <section class="hero">
+
+    <!-- Centered orange camera logo (old website style) -->
+    <svg viewBox="0 0 64 64">
+      <rect x="6" y="16" width="52" height="36" rx="8"/>
+      <rect x="18" y="10" width="12" height="8" rx="2"/>
+      <circle cx="32" cy="34" r="12" fill="#111"/>
+      <circle cx="32" cy="34" r="6" fill="#222"/>
+      <circle cx="50" cy="26" r="3" fill="#111"/>
+    </svg>
+
+    <h2>Film Your Ride.<br>Replay the Day.</h2>
+
+    <p class="sub">
+      Rent a premium 360° action camera for your mountain adventure.<br>
+      Full-day <strong>$60</strong>. After booking, we’ll contact you to arrange pickup.
+    </p>
+
+    <div class="cta">
+      <a class="btn" href="#book">Reserve a Camera</a>
+      <a class="btn alt" href="#how">How it works</a>
+    </div>
+
+  </section>
+
+  <section class="card price">
+    <h3>Full-Day Rental</h3>
+    <div class="amount">$60</div>
+    <p class="muted">7 hours · Capture your entire mountain day in crisp 360°.</p>
+  </section>
+
+  <section id="how" class="card">
+    <h3>How it works</h3>
+    <ul class="muted">
+      <li><strong>Reserve</strong> online — Full-day only.</li>
+      <li><strong>Pickup</strong> — we coordinate a convenient meetup location.</li>
+      <li><strong>Ride</strong> — film your runs, jumps, trees, and bowls.</li>
+      <li><strong>Replay</strong> — footage delivered after return, with optional editing.</li>
+    </ul>
+  </section>
+
+  <section id="book" class="card">
+    <h3>Book now</h3>
+    <p class="muted">Choose your preferred contact method.</p>
+
+    <div class="cta">
+      <a class="btn" href="mailto:RideReplay1@gmail.com?subject=RideReplay%20Reservation&body=Name:%0APhone:%0ADate:%0AFull-Day%20Rental:%20Yes%0A">Email us</a>
+      <a class="btn alt" href="tel:+17202363814">Call/Text 720-236-3814</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © <span id="year"></span> RideReplay • Aspen / Snowmass
+  <br>📧 RideReplay1@gmail.com • 📞 720-236-3814
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
