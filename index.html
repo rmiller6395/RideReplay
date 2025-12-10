@@ -25,7 +25,6 @@
       background:#0F1B2D;
     }
 
-    /* Background image + overlay */
     body::before{
       content:"";
       position:fixed;
@@ -104,7 +103,6 @@
       color:var(--frost);
     }
 
-    /* HERO */
     .hero{
       padding:80px 0 50px;
       text-align:center;
@@ -153,6 +151,10 @@
       font-weight:800;
     }
 
+    .muted{
+      color:var(--muted);
+    }
+
     footer{
       text-align:center;
       padding:30px 0;
@@ -178,12 +180,9 @@
   </div>
 </header>
 
-
 <main class="container">
 
   <section class="hero">
-
-    <!-- Centered orange camera logo (old website style) -->
     <svg viewBox="0 0 64 64">
       <rect x="6" y="16" width="52" height="36" rx="8"/>
       <rect x="18" y="10" width="12" height="8" rx="2"/>
@@ -196,14 +195,13 @@
 
     <p class="sub">
       Rent a premium 360° action camera for your mountain adventure.<br>
-      Full-day <strong>$60</strong>. After booking, we’ll contact you to arrange pickup.
+      Full-day <strong>$60</strong> (6 hours). Optional editing add-ons from <strong>$25</strong>.
     </p>
 
     <div class="cta">
       <a class="btn" href="#book">Reserve a Camera</a>
-      <a class="btn alt" href="#how">How it works</a>
+      <a class="btn alt" href="#editing">Editing options</a>
     </div>
-
   </section>
 
   <section class="card price">
@@ -212,13 +210,40 @@
     <p class="muted">6 hours · Capture your entire mountain day in crisp 360°.</p>
   </section>
 
+  <section id="editing" class="card">
+    <h3>Editing add-ons</h3>
+    <p class="muted">
+      Upgrade your footage with a finished clip, ready to post on Instagram, TikTok, or YouTube Shorts.
+    </p>
+
+    <div class="cta" style="margin-top:8px;align-items:flex-start;justify-content:flex-start;gap:40px;">
+      <div style="min-width:220px;text-align:left;">
+        <h4 style="margin:0 0 4px;">Basic Edit — $25</h4>
+        <p class="muted" style="margin:0;">
+          30–60 sec highlight. Simple cuts, music, basic color, perfect for a quick share.
+        </p>
+      </div>
+
+      <div style="min-width:220px;text-align:left;">
+        <h4 style="margin:0 0 4px;">Premium Edit — $45</h4>
+        <p class="muted" style="margin:0;">
+          Up to 2 minutes. 360° reframing, speed ramps, smoother transitions, social-ready.
+        </p>
+      </div>
+    </div>
+
+    <p class="muted" style="margin-top:12px;">
+      You can choose your editing option when you book or after you see your raw clips.
+    </p>
+  </section>
+
   <section id="how" class="card">
     <h3>How it works</h3>
     <ul class="muted">
-      <li><strong>Reserve</strong> online — Full-day only.</li>
+      <li><strong>Reserve</strong> online — Full-day only (6 hours).</li>
       <li><strong>Pickup</strong> — we coordinate a convenient meetup location.</li>
       <li><strong>Ride</strong> — film your runs, jumps, trees, and bowls.</li>
-      <li><strong>Replay</strong> — footage delivered after return, with optional editing.</li>
+      <li><strong>Replay</strong> — footage delivered after return, with optional Basic ($25) or Premium ($45) edit.</li>
     </ul>
   </section>
 
@@ -227,7 +252,10 @@
     <p class="muted">Choose your preferred contact method.</p>
 
     <div class="cta">
-      <a class="btn" href="mailto:RideReplay1@gmail.com?subject=RideReplay%20Reservation&body=Name:%0APhone:%0ADate:%0AFull-Day%20Rental:%20Yes%0A">Email us</a>
+      <a class="btn"
+         href="mailto:RideReplay1@gmail.com?subject=RideReplay%20Reservation&body=Name:%0APhone:%0ADate:%0AFull-Day%20Rental:%20Yes%0AEditing%20Option%20(Basic%20$25%20/%20Premium%20$45%20/%20None):%20">
+        Email us
+      </a>
       <a class="btn alt" href="tel:+17202363814">Call/Text 720-236-3814</a>
     </div>
   </section>
